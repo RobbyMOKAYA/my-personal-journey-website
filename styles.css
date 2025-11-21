@@ -1,0 +1,231 @@
+/* ------------------------------------------------------
+   GLOBAL THEME VARIABLES (Dark + Light)
+-------------------------------------------------------*/
+:root {
+  --bg: #0e1522;
+  --surface: #111b2e;
+  --card: rgba(255,255,255,0.03);
+  --text: #e8f1ff;
+  --text-muted: #9bb3d1;
+  --accent: #5eead4;
+
+  --radius: 14px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.35);
+  --transition: 0.25s ease;
+}
+
+/* LIGHT THEME */
+body.light {
+  --bg: #f4f8fb;
+  --surface: #ffffff;
+  --card: rgba(0,0,0,0.04);
+  --text: #0a2335;
+  --text-muted: #557389;
+  --accent: #0b7285;
+
+  --shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+
+/* ------------------------------------------------------
+   RESET & GLOBAL
+-------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background var(--transition), color var(--transition);
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* ------------------------------------------------------
+   HEADER
+-------------------------------------------------------*/
+.site-header {
+  background: linear-gradient(90deg, #0c14228a, #16263d8a);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Navigation (if added) */
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------
+   TYPOGRAPHY
+-------------------------------------------------------*/
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  color: var(--accent);
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* ------------------------------------------------------
+   CARDS & CONTENT
+-------------------------------------------------------*/
+.card, article, section {
+  background: var(--card);
+  padding: 1.3rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform var(--transition), background var(--transition);
+  margin-bottom: 1.3rem;
+}
+
+.card:hover,
+article:hover,
+section:hover {
+  transform: translateY(-4px);
+}
+
+/* Grid Layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------------------
+   BUTTONS
+-------------------------------------------------------*/
+.btn {
+  background: var(--accent);
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  color: #032b2b;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.outline:hover {
+  background: var(--accent);
+  color: #073135;
+}
+
+/* ------------------------------------------------------
+   FORMS
+-------------------------------------------------------*/
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.4rem 0;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border var(--transition), background var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--accent);
+  outline: none;
+}
+
+/* ------------------------------------------------------
+   FOOTER
+-------------------------------------------------------*/
+.site-footer {
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------------*/
+@media (max-width: 600px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  article,
+  section {
+    padding: 1rem;
+  }
+}

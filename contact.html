@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — My Journey</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container"><h1 class="brand"><a href="index.html">My Journey</a></h1></div></header>
+<main class="container">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:your.email@example.com">mokayarobin5@gmail.com</a></p>
+<p>GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener">https://github.com/RobbyMOKAYA</a></p>
+
+
+<h3>Send a message</h3>
+<form id="contactForm" novalidate>
+<label for="name">Name</label>
+<input id="name" name="name" required minlength="2">
+
+
+<label for="email">Email</label>
+<input id="email" name="email" type="email" required>
+
+
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+
+
+<button type="submit" class="btn">Send</button>
+<p id="formMsg" aria-live="polite"></p>
+</form>
+</main>
+<footer class="site-footer"><div class="container"><p><a href="index.html">Home</a></p></div></footer>
+<script src="js/scripts.js"></script>
+</body>
+</html>
